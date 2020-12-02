@@ -1,5 +1,7 @@
 <template>
 <b-container>
+    <adicionar-jogo />
+
 <b-card-group deck>
                 
                 <b-card 
@@ -18,7 +20,13 @@
                             Detalhar
                         </router-link>
                     </b-card-text>
-                
+
+                    <b-card-text>
+                        <b-icon-trash 
+                        @click="deletarJogo(jogo.id)"
+                        >
+                        </b-icon-trash>
+                    </b-card-text>
                 </b-card>
             </b-card-group>
 </b-container>
@@ -26,13 +34,20 @@
 
 <script>
 import { mapGetters, mapActions} from "vuex"
+import AdicionarJogo from './AdicionarJogo.vue'
 
 export default {
     name: 'ListaDeJogos',
 
+    components: {
+        AdicionarJogo 
+    },
+
     computed: mapGetters(["todosOsJogos"]),
 
-    methods: mapActions(["getJogos"]),
+    methods: {
+        ...mapActions(["getJogos", "deletarJogo"])
+    },
 
     created() {
         this.getJogos()

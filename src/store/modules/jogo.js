@@ -11,11 +11,23 @@ const getters = {
 const actions = {
     getJogos({commit}) {
         axios.get("https://api.boardgameatlas.com/api/search?limit=12&client_id=BBbVj4m8NB").then((response) => {commit('getJogos', response.data.games)})
+    },
+
+    deletarJogo({commit}, id) {
+        commit('deletarJogo', id)
+    },
+
+    adicionarJogo({commit}, jogo) {
+        commit('adicionarJogo', jogo)
     }
 }
 
 const mutations = {
-    getJogos: (state, data) => (state.jogos = data)
+    getJogos: (state, data) => (state.jogos = data),
+
+    deletarJogo: (state, id) => (state.jogos = state.jogos.filter(j => j.id !== id)), //chama todos os jogos sem ser o que tem esse id
+
+    adicionarJogo: (state, data) => state.jogos.push(data)
 }
 
 export default {
