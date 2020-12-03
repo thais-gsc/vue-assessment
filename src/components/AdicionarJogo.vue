@@ -6,15 +6,11 @@
         </h3>
     </b-row>
 
-    <b-row>
-        <b-form>
-            <label for="inline-form-input-name"></label>
-                <b-form-input v-model="name" id="inline-form-input-name"></b-form-input>
-                <label for="inline-form-input-text"></label>
-                <b-form-input v-model="year_published" id="inline-form-input-text"></b-form-input>
-                <b-button @click="criarJogo()">Salvar</b-button>
-        </b-form>
-    </b-row>
+    <label for="name">Nome:</label>
+        <input type="text" v-model="name" id="name">
+        <label for="ano">Ano de publicação:</label>
+        <input type="number" v-model="year_published" id="ano">
+        <button @click="criarJogo()">Salvar</button>
 </b-container>
 </template>
 
@@ -32,13 +28,14 @@ export default {
     },
 
     methods: {
-        ...mapActions(["AdicionarJogo"]),
+        ...mapActions(["adicionarJogo"]),
 
         criarJogo() {
             let jogo = {
                 "name": this.name,
-                "year_publised": this.year_published
+                "year_published": this.year_published
             }
+            console.log(jogo)
             this.adicionarJogo(jogo)
         }
 
