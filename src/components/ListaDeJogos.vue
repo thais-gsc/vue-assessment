@@ -1,35 +1,55 @@
 <template>
-<b-container>
-    <adicionar-jogo />
+    <b-container>
+        <b-navbar type="light" variant="light">
+            <b-navbar-brand>Ludoteca</b-navbar-brand>
+        </b-navbar>
 
-<b-card-group deck>
-                
-                <b-card 
-                v-for="jogo in todosOsJogos" 
-                :key="jogo.id"
-                style="min-width: 16rem; max-width: 16rem;"
-                border-variant="primary" 
-                :header="jogo.name" 
-                header-bg-variant="primary" 
-                header-text-variant="white" 
-                align="center"
-                >
-                
-                    <b-card-text>
-                        <router-link tag="p" :to="{name:'DetalharJogos', params: {id: jogo.id, jogo: jogo}}">
+        <b-row>
+            <h1>
+                <b-icon icon="dice6" animation="spin" font-scale="1"></b-icon> 
+                Jogos de Tabuleiro 
+                <b-icon icon="dice6-fill" animation="spin-reverse" font-scale="1"></b-icon>
+            </h1>
+        </b-row>
+        
+
+        <b-card-group deck>
+            <b-card 
+            v-for="jogo in todosOsJogos" 
+            :key="jogo.id"
+            style="min-width: 16rem; max-width: 16rem;"
+            border-variant="default" 
+            :header="jogo.name" 
+            header-bg-variant="danger" 
+            header-text-variant="white" 
+            align="center"
+            class="card"
+            >
+            
+                <b-card-text>
+                    <b-button variant="outline-danger">
+                        <router-link tag="span" 
+                        :to="{name:'DetalharJogos', params: {id: jogo.id, jogo: jogo}}"
+                        >
                             Detalhar
                         </router-link>
-                    </b-card-text>
+                    </b-button>
+                </b-card-text>
 
-                    <b-card-text>
-                        <b-icon-trash 
-                        @click="deletarJogo(jogo.id)"
-                        >
-                        </b-icon-trash>
-                    </b-card-text>
-                </b-card>
-            </b-card-group>
-</b-container>
+                <b-link class="b-link">
+                    <b-icon-trash 
+                    @click="deletarJogo(jogo.id)"
+                    >
+                    </b-icon-trash>
+                </b-link>
+            </b-card>
+        </b-card-group>
+
+        <adicionar-jogo />
+        <b-navbar type="light" variant="light" class="footer">
+            Assessment de Frameworks Front-end e Conexão com Back-End - Thaís Gadiole Schöntag
+        </b-navbar>
+    </b-container>
 </template>
 
 <script>
@@ -56,5 +76,20 @@ export default {
 </script>
 
 <style>
+    .card {
+        margin: auto;
+    }
 
+    .footer {
+        margin-top: 50px;
+    }
+
+    .card-deck {
+        margin-left: 100px;
+    }
+
+    h1 {
+        margin: auto;
+        margin-top: 20px;
+    }
 </style>
