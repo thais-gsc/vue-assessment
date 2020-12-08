@@ -1,7 +1,9 @@
 <template>
     <b-container>
         <b-navbar type="light" variant="light">
-            <b-navbar-brand>Ludoteca</b-navbar-brand>
+            <b-navbar-brand>
+                Ludoteca
+            </b-navbar-brand>
         </b-navbar>
 
         <b-row>
@@ -39,13 +41,13 @@
                 <b-link class="b-link">
                     <b-icon-trash 
                     @click="deletarJogo(jogo.id)"
-                    >
-                    </b-icon-trash>
+                    ></b-icon-trash>
                 </b-link>
             </b-card>
         </b-card-group>
 
         <adicionar-jogo />
+        
         <b-navbar type="light" variant="light" class="footer">
             Assessment de Frameworks Front-end e Conexão com Back-End - Thaís Gadiole Schöntag
         </b-navbar>
