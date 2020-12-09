@@ -1,10 +1,6 @@
 <template>
     <b-container>
-        <b-navbar type="light" variant="light">
-            <b-navbar-brand>
-                Ludoteca
-            </b-navbar-brand>
-        </b-navbar>
+        
 
         <b-row>
             <h1>
@@ -48,9 +44,7 @@
 
         <adicionar-jogo />
         
-        <b-navbar type="light" variant="light" class="footer">
-            Assessment de Frameworks Front-end e Conexão com Back-End - Thaís Gadiole Schöntag
-        </b-navbar>
+        
     </b-container>
 </template>
 
@@ -80,10 +74,6 @@ export default {
 <style>
     .card {
         margin: auto;
-    }
-
-    .footer {
-        margin-top: 50px;
     }
 
     .card-deck {

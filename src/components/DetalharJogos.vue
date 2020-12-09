@@ -41,7 +41,7 @@
             </b-row>
         </b-card>
 
-        <div>
+        <div id="edit">
             <h2>Editar</h2>
 
             <div class="form-group" @submit="onSubmit">
@@ -145,5 +145,10 @@ export default {
         margin: auto;
         margin-top: 50px;
         margin-bottom: 30px
+    }
+
+    #edit {
+        width: 50%;
+        margin: auto;
     }
 </style>

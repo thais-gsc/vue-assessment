@@ -1,5 +1,5 @@
 <template>
-    <b-container>
+    <b-container id="add">
         <b-row>
             <h3>
                 Adicionar jogo
@@ -153,6 +153,7 @@ export default {
 .btn {
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 h3 {
@@ -166,5 +167,9 @@ h3 {
 
 .form-group {
     margin: auto;
+}
+
+#add {
+    width: 50%;
 }
 </style>
