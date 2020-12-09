@@ -151,4 +151,8 @@ export default {
         width: 50%;
         margin: auto;
     }
+
+    .container {
+        padding: 10px;
+    }
 </style>

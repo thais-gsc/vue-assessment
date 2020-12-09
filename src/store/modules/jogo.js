@@ -15,6 +15,7 @@ const actions = {
 
     deletarJogo({commit}, id) {
         commit('deletarJogo', id)
+        window.alert('Jogo excluído :(')
     },
 
     adicionarJogo({commit}, jogo) {

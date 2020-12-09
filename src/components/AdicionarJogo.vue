@@ -142,6 +142,7 @@ export default {
                 "image_url": "https://media.gettyimages.com/vectors/illustration-of-fun-game-night-components-handdrawn-vector-elements-vector-id1273928104?s=2048x2048"
             }
             this.adicionarJogo(jogo)
+            window.alert('Jogo adicionado! :)')
         }
 
     }
